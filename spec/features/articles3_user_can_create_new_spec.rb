@@ -11,7 +11,8 @@ describe 'Article New Form Page' do
       fill_in 'article[title]', with: 'New Title!'
       fill_in 'article[body]',  with: 'New Body!'
       click_on 'Create Article'
-      
+      expect(page).to have_content("Article: 'New Title!' Created.")
+
       expect(page).to have_content('New Title!')
       expect(page).to have_content('New Body!')
     end

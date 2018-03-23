@@ -1,4 +1,4 @@
-require 'rails_helper'
+# require 'rails_helper'
 
 describe 'Article Delete Page' do
   describe 'the user links from the articles index' do
@@ -10,7 +10,7 @@ describe 'Article Delete Page' do
       click_link 'Delete'
 
       expect(current_path).to eq(articles_path)
-
+      expect(page).to have_content("Article: '#{article1.title}' Deleted.")
       expect(page).to_not have_content(article1.body)
       expect(page).to_not have_content(article1.body)
       expect(page).to have_content(article2.title)
